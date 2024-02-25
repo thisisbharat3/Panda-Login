@@ -1,10 +1,9 @@
-# Use a lightweight web server image
-FROM nginx:alpine
+# Use the official Nginx image
+FROM nginx:latest
 
-# Copy the HTML, CSS, and JavaScript files to the default Nginx public directory
-COPY index.html /usr/share/nginx/html
-COPY style.css /usr/share/nginx/html
-COPY script.js /usr/share/nginx/html
+# Copy the HTML, CSS, JavaScript files to Nginx default directory
+COPY index.html style.css script.js /usr/share/nginx/html/
 
-# Expose port 80
+# Expose port 80 to the outside world
 EXPOSE 80
+
